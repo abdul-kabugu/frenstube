@@ -9,8 +9,8 @@ export default function Hero() {
     <div>
       <TopNav  />
     <div className='h-screen  flex flex-col items-center justify-center'>
-      <div className='flex flex-col gap-4 items-center justify-center'>
-        <h1 className='text-5xl font-semibold'>Welcome To FrensTube</h1>
+      <div className='flex flex-col gap-4 items-center justify-center '>
+        <h1 className='sm:text-3xl text-3xl lg:text-5xl font-semibold '>Welcome To FrensTube</h1>
         <div>
        <TypeAnimation   
   sequence={[
@@ -25,7 +25,7 @@ export default function Hero() {
 
   repeat={Infinity}
   wrapper="h1"
-  className='text-4xl font-semibold'
+  className='text-2xl lg:text-4xl font-semibold'
 
 />
 </div>

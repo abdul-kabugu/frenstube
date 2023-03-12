@@ -21,11 +21,11 @@ export default function WaitList() {
        <MailchimpSubscribe
     url={url}
     render={({ subscribe, status, message }) => (
-      <div className='flex flex-col gap-4 justify-center items-center '>
+      <div className='flex flex-col  justify-center items-center '>
          <input   type="email"  value={email} onChange={e => setEmail(e.target.value)} className="border border-gray-300 rounded-lg px-2 py-2 w-[400px] focus:outline-none" 
            placeholder='example@gmail.com'
          />
-          <button onClick={() => subscribe(email)} className="bg-purple-600 px-3 py-3 w-[200px] rounded-lg font-semibold text-white text-lg hover:bg-purple-500"> {status === "sending" ? "Joining" : "Join waitlist"}</button>
+          <button onClick={() => subscribe(email)} className="bg-purple-600 px-3 py-3 w-[200px] rounded-lg font-semibold text-white text-lg hover:bg-purple-500 mt-4"> {status === "sending" ? "Joining" : "Join waitlist"}</button>
         {/*status === "sending" && <div style={{ color: "blue" }}>sending...</div>*/}
         {status === "error" && toast.error(message, {position : toast.POSITION.BOTTOM_RIGHT})}
         {status === "success" && toast.success("Joined !", {position : toast.POSITION.BOTTOM_RIGHT})}
