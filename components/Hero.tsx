@@ -33,7 +33,7 @@ export default function Hero() {
 
 </div>
 
-<div className='mt-10  w-[450px] flex items-center justify-center '>
+<div className='mt-10  sm:w-[450px] flex items-center justify-center '>
     <WaitList    />
   </div>
     
