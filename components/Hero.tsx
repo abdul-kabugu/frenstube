@@ -10,7 +10,7 @@ export default function Hero() {
       <TopNav  />
     <div className='h-screen  flex flex-col items-center justify-center'>
       <div className='flex flex-col gap-4 items-center justify-center '>
-        <h1 className='sm:text-3xl text-3xl lg:text-5xl font-semibold '>Welcome To FrensTube</h1>
+        <h1 className='sm:text-3xl text-3xl lg:text-5xl font-semibold '>Welcome To FrenTube</h1>
         <div>
        <TypeAnimation   
   sequence={[
