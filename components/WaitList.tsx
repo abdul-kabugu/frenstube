@@ -3,35 +3,25 @@ import {useState} from 'react'
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//import { useMailchimpSubscription } from 'react-mailchimp-subscribe';
-export default function WaitList() {
-  const [email, setEmail] = useState('');
-  const url = "https://gmail.us12.list-manage.com/subscribe/post?u=9e69608cc483bfec9986b331f&amp;id=adb00b588e&amp;f_id=007756e0f0"
-  const SimpleForm = () => <MailchimpSubscribe url={url}/>
-/*  const { subscribe, status, message } = useMailchimpSubscription({
-    url: url
-  });*/
+import waitlist from '@zootools/waitlist-js'
 
-  const handleSubmit = async  => {
-   // event.preventDefault();
-    subscribe({ EMAIL: email });
-  };
+export default function WaitList() {
+ 
+
+  const clickPopup = (event) => {
+    event.preventDefault();
+  
+    // Pass your waitlist ID
+    waitlist.openPopup("EsVeoDMy1PfGBvZv23r9")
+  }
+
+
   return (
     <div>
-       <MailchimpSubscribe
-    url={url}
-    render={({ subscribe, status, message }) => (
-      <div className='flex flex-col  justify-center items-center w-[100%]'>
-         <input   type="email"  value={email} onChange={e => setEmail(e.target.value)} className="border border-gray-300 rounded-lg px-2 py-2 md:w-[400px] focus:outline-none" 
-           placeholder='example@gmail.com'
-         />
-          <button onClick={() => subscribe(email)} className="bg-purple-600 px-3 py-3 w-[200px] rounded-lg font-semibold text-white text-lg hover:bg-purple-500 mt-4"> {status === "sending" ? "Joining" : "Join waitlist"}</button>
-        {/*status === "sending" && <div style={{ color: "blue" }}>sending...</div>*/}
-        {status === "error" && toast.error(message, {position : toast.POSITION.BOTTOM_RIGHT})}
-        {status === "success" && toast.success("Joined !", {position : toast.POSITION.BOTTOM_RIGHT})}
-      </div>
-    )}
-  />
+     
+<button onClick={clickPopup} className="bg-purple-600 px-3 py-3 w-[200px] rounded-lg font-semibold text-white text-lg hover:bg-purple-500 mt-4"> Join waitlist</button>
+
+   
     </div>
   )
 }
